@@ -1,0 +1,81 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.header-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    gap: 0.5rem;
+}
+
+a img {
+    width: 3rem;
+    height: 3rem;
+}
+
+a .hidden-label {
+    opacity: 0;
+    font-size: 0.85rem;
+    color: transparent;
+    background-image: linear-gradient(90deg, #fff 0%, #fff 10%, var(--accent) 100%);
+    background-size: 1000% 100%;
+    background-position: left;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: opacity 0.5s ease-in-out;
+
+    /* Move text slightly up while hidden*/
+    /*transform: translateY(-5px);*/
+}
+
+a::before {
+    content: "";
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.5s ease-in-out;
+    background: radial-gradient(var(--accent) 5%, transparent 70%);
+    top: -7px;
+    height: 4rem;
+    width: 4rem;
+
+    border-radius: 100%;
+    z-index: -5;
+}
+
+a:hover::before,
+a:focus::before {
+    /*TODO: Fix the positioning of the ::befoer pseudo elemnt hover*/
+    opacity: 1;
+}
+
+a:hover .hidden-label,
+a:focus .hidden-label {
+    opacity: 1;
+    animation: sweepColor 1s forwards;
+    /*transform: translateY(0);*/
+}
+
+/*
+For fun, moving the gradient background left to right to achieve
+text changing color left to right.
+*/
+@keyframes sweepColor {
+    from {
+        background-position: left;
+    }
+
+    to {
+        background-position: right;
+    }
+}
