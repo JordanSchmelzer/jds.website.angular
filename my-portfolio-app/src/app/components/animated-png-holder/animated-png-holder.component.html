@@ -1,0 +1,13 @@
+<div class="animation-img-container">
+    <!--<img *ngIf="backgroundImages" [src]="backgroundImages" class="base" alt="Background PNGs" />
+    -->
+    <div *ngIf="overlayImages?.length">
+        <img *ngIf="overlayImages?.length" [src]="overlayImages[overlayImagesIndex].src"
+            [class]="overlayImages[overlayImagesIndex].class" alt="Image" [style.width.px]="overlayImageSize"
+            [style.height.px]="overlayImageSize" />
+    </div>
+
+    <div *ngIf="!overlayImages?.length">
+        <p>No images to display.</p>
+    </div>
+</div>

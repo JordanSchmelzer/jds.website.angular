@@ -1,0 +1,7 @@
+.animation-img-container {
+    position: relative;
+}
+
+.pixelated {
+    image-rendering: pixelated;
+}

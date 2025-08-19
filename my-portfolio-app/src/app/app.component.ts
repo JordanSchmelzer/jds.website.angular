@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./components/header/header.component";
-import { FooterComponent } from "./components/footer/footer.component";
 import { ProjectsComponent } from './components/projects/projects.component';
 import { SkillsComponent } from "./components/skills/skills.component";
+import { ExperienceComponent } from "./components/experience/experience.component";
+import { HeroComponent } from "./components/hero/hero.component";
 
 
 @Component({
@@ -13,9 +14,10 @@ import { SkillsComponent } from "./components/skills/skills.component";
   styleUrl: './app.component.css',
   imports: [
     HeaderComponent,
-    FooterComponent,
     ProjectsComponent,
-    SkillsComponent
+    SkillsComponent,
+    ExperienceComponent,
+    HeroComponent
   ]
 })
 export class AppComponent {

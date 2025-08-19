@@ -1,0 +1,30 @@
+h1 {
+    font-size: 3rem;
+}
+
+
+
+.sprites-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+
+.hero-name {
+    font-size: 3rem;
+}
+
+.accent-underline {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 20%;
+}
+
+.circle-no-fill {
+    border-radius: 50%;
+    border: 1px solid white;
+    overflow: hidden;
+    background: radial-gradient(circle at center, var(--accent), var(--bg-body))
+}
