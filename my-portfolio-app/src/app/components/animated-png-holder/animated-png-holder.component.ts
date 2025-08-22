@@ -15,10 +15,11 @@ export class AnimatedPngHolderComponent {
   backgroundImagesIndex = 0;
   private backgroundInterval: any;
 
-  /*@Input() backgroundImages?: { src: string; class?: string }[];*/
+  @Input() backgroundImages?: { src: string; class?: string }[];
   @Input() overlayImages: { src: string; class?: string }[] = [];
   @Input() noImagesTest?: string = "";
   @Input() overlayImageSize = 16;
+
 
   ngOnInit() {
     if (this.overlayImages?.length) {

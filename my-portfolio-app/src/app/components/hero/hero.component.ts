@@ -24,23 +24,26 @@ export class HeroComponent {
     return 256;
   }
 
+  machiSheetPath: string = 'assets/sprites/Machi/Machi.json';
   machiOverlayImages = [
     { src: 'assets/sprites/Machi/Machi-0.png', class: 'pixelated' },
     { src: 'assets/sprites/Machi/Machi-1.png', class: 'pixelated' },
     { src: 'assets/sprites/Machi/Machi-2.png', class: 'pixelated' },
     { src: 'assets/sprites/Machi/Machi-3.png', class: 'pixelated' },
-  ]
+  ];
 
+  jordanSheetPath: string = 'assets/sprites/Jordan/Jordan.json';
   jordanOverlayImages = [
     { src: 'assets/sprites/Jordan/Jordan-0.png', class: 'pixelated' },
     { src: 'assets/sprites/Jordan/Jordan-1.png', class: 'pixelated' }
-  ]
+  ];
 
+  peachSheetPath: string = 'assets/sprites/Peach/Peach.json';
   peachOverlayImages = [
     { src: 'assets/sprites/Peach/Peach-0.png', class: 'pixelated' },
     { src: 'assets/sprites/Peach/Peach-1.png', class: 'pixelated' },
     { src: 'assets/sprites/Peach/Peach-2.png', class: 'pixelated' },
     { src: 'assets/sprites/Peach/Peach-3.png', class: 'pixelated' }
-  ]
+  ];
   /* -- */
 }

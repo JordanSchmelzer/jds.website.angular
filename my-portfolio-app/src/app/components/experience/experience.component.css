@@ -1,0 +1,18 @@
+.accent-section {
+    background-color: var(--bg-body2);
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.job-card {
+    background-color: var(--bg-body);
+    border-radius: 10px;
+}

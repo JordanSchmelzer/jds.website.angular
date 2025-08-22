@@ -1,7 +1,16 @@
 h1 {
     font-size: 3rem;
+    margin: 32px;
 }
 
+.center-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
 
 
 .sprites-container {
@@ -9,8 +18,9 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 40px;
+    margin-top: 36px;
+    margin-bottom: 36px;
 }
-
 
 .hero-name {
     font-size: 3rem;

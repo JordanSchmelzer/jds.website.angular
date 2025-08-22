@@ -1,5 +1,6 @@
 :root {
     --bg-body: hsl(0, 0%, 14%);
+    --bg-body2: hsl(0, 0%, 20%);
     --text1: hsl(0, 0%, 85%);
     --text2: hsl(0, 0%, 70%);
     --accent: hsl(153, 71%, 59%);
