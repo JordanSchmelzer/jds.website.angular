@@ -1,10 +1,35 @@
 <section class="accent-section">
-    <h2>Experience</h2>
+    <h2>Experience </h2>
+    <div class="experience-text">Over {{roundedYearsExp }} yrs delivering excellence in Manufacturing and
+        Systems... and
+        counting!</div>
     <div class="grid-container">
-        <div *ngFor="let job of this.jobs" class="job-card">
-            <h3>{{job["jobTitle"]}}</h3>
-            <h4>{{job["companyName"]}}</h4>
-            <p>{{job["description"]}}</p>
+        <div *ngFor="let job of this.jobs; let i = index" class="job-card">
+            <div class="job-header">
+                <h3>{{job["jobTitle"]}}</h3>
+                <span>{{job["companyName"]}}</span>
+                <span class="job-duration">
+                    {{job["startDate"]}} - {{job["endDate"]}} · {{job["duration"]}} yr
+                </span>
+            </div>
+
+            <div class="divider-container">
+                <div class="divider-line"></div>
+                <button (click)="toggle(i)" class="divider-button">
+                    {{ expanded[i] ? 'Read Less': 'Read More'}}
+                </button>
+            </div>
+
+            <div *ngIf="!this.expanded[i]" class="blur-container">
+                <div class="blur">
+                    <p>{{job["description"].slice(0,300)}} . . .</p>
+                </div>
+            </div>
+
+            <div *ngIf="this.expanded[i]">
+                <p>{{job["description"]}}</p>
+            </div>
+
         </div>
     </div>
 </section>
