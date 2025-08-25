@@ -4,12 +4,13 @@
         Systems... and
         counting!</div>
     <div class="grid-container">
-        <div *ngFor="let job of this.jobs; let i = index" class="job-card">
+        <div *ngFor="let job of jobs; let i = index" class="job-card">
             <div class="job-header">
                 <h3>{{job["jobTitle"]}}</h3>
                 <span>{{job["companyName"]}}</span>
+
                 <span class="job-duration">
-                    {{job["startDate"]}} - {{job["endDate"]}} · {{job["duration"]}} yr
+                    {{job["displayStartDate"]}} - {{job["displayEndDate"]}} · {{job["duration"]}} yr
                 </span>
             </div>
 
@@ -20,14 +21,17 @@
                 </button>
             </div>
 
-            <div *ngIf="!this.expanded[i]" class="blur-container">
+            <div *ngIf="!expanded[i]" class="blur-container">
                 <div class="blur">
                     <p>{{job["description"].slice(0,300)}} . . .</p>
                 </div>
             </div>
 
-            <div *ngIf="this.expanded[i]">
+            <div *ngIf="expanded[i]">
+                <div [innerHtml]="job['description']"></div>
+                <!--
                 <p>{{job["description"]}}</p>
+                -->
             </div>
 
         </div>

@@ -9,6 +9,10 @@ h2 {
     margin: 0;
 }
 
+.red {
+    color: red;
+}
+
 p,
 span,
 h3,
@@ -38,8 +42,6 @@ h4 {
     gap: 1.5rem;
 
 }
-
-.blur-container {}
 
 .job-card {
     background-color: var(--bg-body);
