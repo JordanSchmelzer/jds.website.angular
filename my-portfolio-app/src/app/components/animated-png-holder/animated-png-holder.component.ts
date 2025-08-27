@@ -26,7 +26,7 @@ export class AnimatedPngHolderComponent {
       this.overlayInterval = setInterval(() => {
         this.overlayImagesIndex =
           (this.overlayImagesIndex + 1) % this.overlayImages.length;
-      }, 300); // Adjust speed as needed
+      }, 400); // Adjust speed as needed
     }
   }
 

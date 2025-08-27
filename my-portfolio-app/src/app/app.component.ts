@@ -4,6 +4,7 @@ import { HeaderComponent } from "./components/header/header.component";
 import { SkillsComponent } from "./components/skills/skills.component";
 import { ExperienceComponent } from "./components/experience/experience.component";
 import { HeroComponent } from "./components/hero/hero.component";
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @Component({
@@ -15,7 +16,8 @@ import { HeroComponent } from "./components/hero/hero.component";
     HeaderComponent,
     SkillsComponent,
     ExperienceComponent,
-    HeroComponent
+    HeroComponent,
+    FooterComponent
   ]
 })
 export class AppComponent {

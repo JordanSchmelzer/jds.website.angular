@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { Job } from '../../models/job';
+import { AnimatedPngHolderComponent } from '../animated-png-holder/animated-png-holder.component';
 
 @Component({
   selector: 'app-experience',
-  imports: [CommonModule],
+  imports: [CommonModule, AnimatedPngHolderComponent],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.css'
 })
@@ -20,9 +21,25 @@ export class ExperienceComponent implements OnInit {
   get roundedYearsExp(): number { return Math.round(this.totalYearsExp); }
   get msInYear(): number { return (1000 * 60 * 60 * 24 * 365.25); }
   private jobsJson: Job[];
+  public businessMachi: any[] = []
+  public businessPeach: any[] = []
 
   constructor(private http: HttpClient) {
     // mock up getting data from a service, its what id prob use if i had a db/api
+    this.businessMachi = [
+      { src: 'assets/sprites/Business-Machi/Business-Machi-0.png', class: 'pixelated' },
+      { src: 'assets/sprites/Business-Machi/Business-Machi-1.png', class: 'pixelated' },
+      { src: 'assets/sprites/Business-Machi/Business-Machi-2.png', class: 'pixelated' },
+      { src: 'assets/sprites/Business-Machi/Business-Machi-3.png', class: 'pixelated' }
+    ]
+
+    this.businessPeach = [
+      { src: 'assets/sprites/Business-Peach/Business-Peach-0.png', class: 'pixelated' },
+      { src: 'assets/sprites/Business-Peach/Business-Peach-1.png', class: 'pixelated' },
+      { src: 'assets/sprites/Business-Peach/Business-Peach-2.png', class: 'pixelated' },
+      { src: 'assets/sprites/Business-Peach/Business-Peach-3.png', class: 'pixelated' },
+    ]
+
     this.jobsJson = [
       {
         order: 1,
@@ -65,6 +82,12 @@ export class ExperienceComponent implements OnInit {
         current: false
       }
     ]
+  }
+  getSizeCat(): number {
+    const width = window.innerWidth;
+    if (width < 480) return 64;
+    if (width < 770) return 100;
+    return 150;
   }
 
   async ngOnInit() {
