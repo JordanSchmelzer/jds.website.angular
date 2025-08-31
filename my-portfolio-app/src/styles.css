@@ -1,29 +1,23 @@
 :root {
     --bg-body: hsl(0, 0%, 14%);
     --bg-body2: hsl(0, 0%, 20%);
+    --bg-body3: hsl(0, 0%, 26%);
+
     --text1: hsl(0, 0%, 85%);
     --text2: hsl(0, 0%, 70%);
+
     --accent: hsl(153, 71%, 59%);
+    --mouse-color: hsl(0, 0%, 20%);
+    --mouse-color1: hsl(0, 50%, 46%);
+
     --fs-14: .875rem;
     --fs-16: 1rem;
     --fs-18: 1.125rem;
     --fs-20: 1.25rem;
     --fs-22: 1.375rem;
     --fs-24: 1.5rem;
+
     --transition-speed: 0.3s ease-in-out;
-}
-
-.fs-14 {
-    font-size: var(--fs-14);
-}
-
-.fs-18 {
-    font-size: var(--fs-18);
-}
-
-.jobInnerHtml {
-    padding: 10px;
-    overflow: hidden;
 }
 
 html,
@@ -39,4 +33,17 @@ body {
     color: white;
     font-family: "Montserrat", sans-serif;
     /* background:  linear-gradient(to right, var(--bg-body), var(--accent)); */
+}
+
+.fs-14 {
+    font-size: var(--fs-14);
+}
+
+.fs-18 {
+    font-size: var(--fs-18);
+}
+
+.jobInnerHtml {
+    padding: 10px;
+    overflow: hidden;
 }

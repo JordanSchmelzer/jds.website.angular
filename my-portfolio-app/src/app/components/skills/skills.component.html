@@ -1,12 +1,68 @@
-<section class="accent-section">
-    <h2>Skills</h2>
+<section>
 
-    <div class="skill">
-        skill2
+    <div class="skills-header">
+        <div class="skills-header-card">
+            <h2>Skills</h2>
+        </div>
+
+        <div class="svg-effect">
+
+            <svg width="400" height="500" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="verticalGradient" x1="0" y1="0" x2="0" y2="100%" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="black"></stop>
+                        <stop offset="100%" stop-color="black" stop-opacity="0"></stop>
+                    </linearGradient>
+                </defs>
+
+                <defs>
+                    <linearGradient id="myGradient" x1="0" y1="0" x2="0" y2="100%" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="black"></stop>
+                        <stop offset="80%" stop-color="black" stop-opacity="0"></stop>
+                    </linearGradient>
+                </defs>
+
+
+                <!-- Top left path -->
+                <path d="M 200 85 H 0" stroke="url(#myGradient)" stroke-width="7"></path>
+
+                <!-- Top left short path -->
+                <path d="M 200 110 H 150" stroke="url(#myGradient)" stroke-width="7"></path>
+
+                <!-- Top right path -->
+                <path d="M 200 85 H 400" stroke="url(#myGradient)" stroke-width="7"></path>
+
+                <!-- Top right short path -->
+                <path d="M 200 110 H 250" stroke="url(#myGradient)" stroke-width="7"></path>
+
+
+                <!-- Center vertical line -->
+                <line x1="200" y1="0" x2="200" y2="500" stroke="url(#verticalGradient)" stroke-width="7"></line>
+            </svg>
+        </div>
     </div>
 
-    <div class="skill">
-        skill2
+    <div class="skills-content">
+
+        <div class="dev-skills">
+            <div class="skill-container">
+                <div *ngFor="let skill of languageSkills;" class="skill-card">
+                    {{skill}}
+                </div>
+            </div>
+
+            <div class="skill-container">
+                <div *ngFor="let skill of softwareSkills;" class="skill-card">
+                    {{skill}}
+                </div>
+            </div>
+        </div>
+
+        <div class="skill-container">
+            <div *ngFor="let skill of manufacturingSkills;" class="skill-card">
+                {{skill}}
+            </div>
+        </div>
     </div>
 
 </section>

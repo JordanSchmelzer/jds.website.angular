@@ -1,14 +1,16 @@
 <section class="accent-section">
     <div class="header-wrapper">
-        <app-animated-png-holder [overlayImages]="businessMachi" [overlayImageSize]="getSizeCat()">
-        </app-animated-png-holder>
-        <h2>Experience</h2>
-        <app-animated-png-holder [overlayImages]=" businessPeach" [overlayImageSize]="getSizeCat()">
-        </app-animated-png-holder>
-    </div>
-    <div class=" experience-text">Over {{roundedYearsExp }} yrs delivering excellence in Manufacturing and
-        Systems... and
-        counting!
+        <div class="header-title">
+            <app-animated-png-holder [overlayImages]="businessMachi" [overlayImageSize]="getSizeCat()">
+            </app-animated-png-holder>
+            <h2>Experience</h2>
+            <app-animated-png-holder [overlayImages]=" businessPeach" [overlayImageSize]="getSizeCat()">
+            </app-animated-png-holder>
+        </div>
+        <div class="experience-text">Over {{roundedYearsExp }} yrs delivering excellence in Manufacturing and
+            Systems... and
+            counting!
+        </div>
     </div>
     <div class="grid-container">
         <div *ngFor="let job of jobs; let i = index" class="job-card">
