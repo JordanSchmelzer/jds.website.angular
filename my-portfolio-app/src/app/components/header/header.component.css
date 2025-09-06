@@ -48,7 +48,6 @@ a::before {
     top: -7px;
     height: 4rem;
     width: 4rem;
-
     border-radius: 100%;
     z-index: -5;
 }

@@ -6,7 +6,8 @@ import { ExperienceComponent } from "./components/experience/experience.componen
 import { ProjectsComponent } from './components/projects/projects.component';
 import { HeroComponent } from "./components/hero/hero.component";
 import { FooterComponent } from './components/footer/footer.component';
-import { MouseGradientOverlayComponent } from './mouse-gradient-overlay/mouse-gradient-overlay.component';
+import { MouseGradientOverlayComponent } from './components/mouse-gradient-overlay/mouse-gradient-overlay.component';
+import { ExampleComponent } from './components/example/example.component';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ import { MouseGradientOverlayComponent } from './mouse-gradient-overlay/mouse-gr
     HeroComponent,
     FooterComponent,
     ProjectsComponent,
-    MouseGradientOverlayComponent
+    MouseGradientOverlayComponent,
+    ExampleComponent
   ]
 })
 export class AppComponent {
