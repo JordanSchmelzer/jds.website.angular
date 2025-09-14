@@ -1,0 +1,49 @@
+<section id="contact-me">
+    <nav class="links">
+        <a class="name" href=""><b>jordan</b>schmelzer</a>
+        <div class="link-container">
+            <a href="#page-top">
+                <span>To the top</span>
+            </a>
+            <a routerLink="all-projects">
+                <span>All projects</span>
+            </a>
+            <a routerLink="learn-more">
+                <span>Exerience</span>
+            </a>
+            <a href="https://docs.google.com/document/d/e/2PACX-1vS8WrgZD9QD5IpBLbXLZzitW5SLpUI2kwMTRfHEM2AJL4aQ2GWjwkRkRPXEMEePpX48Vqv6E6IqYGrh/pub"
+                target="_blank">
+                <span>My résumé</span>
+            </a>
+            <a href="#contact-me">
+                <span>Contact me</span>
+            </a>
+        </div>
+    </nav>
+
+    <form #contactForm="ngForm" class="contact-form">
+        <span class="contact-me">Contact me</span>
+        <p>
+            I would love to hear your feedback on my projects and portfolio.
+            You can contact me through LinkedIn, I look
+            forward to making a connection!
+        </p>
+
+        <div class="fields">
+            <div class="field">
+                <label for="fname">Your full name*</label>
+                <input type="text" ngModel name="name" id="fname" value="">
+            </div>
+
+            <div class="field">
+                <label for="femail">Email address*</label>
+                <input type="text" ngModel name="email" id="femail" value="">
+            </div>
+        </div>
+
+        <div class="buttons">
+            <input class="button clear" type="button" value="Clear form" (click)="clearForm(contactForm)">
+            <input class="button submit" type="submit" value="Submit">
+        </div>
+    </form>
+</section>

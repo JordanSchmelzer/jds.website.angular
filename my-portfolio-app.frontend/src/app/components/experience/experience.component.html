@@ -1,0 +1,43 @@
+<section class="accent-section">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <app-animated-png-holder [overlayImages]="businessMachi" [overlayImageSize]="getSizeCat()">
+            </app-animated-png-holder>
+            <h2>Experience</h2>
+            <app-animated-png-holder [overlayImages]=" businessPeach" [overlayImageSize]="getSizeCat()">
+            </app-animated-png-holder>
+        </div>
+        <div class="experience-text">Over {{roundedYearsExp }} yrs delivering excellence in Manufacturing and
+            Systems... and
+            counting!
+        </div>
+    </div>
+    <div class="grid-container">
+        <div *ngFor="let job of jobs; let i = index" class="job-card">
+
+            <h3>{{job["jobTitle"]}}</h3>
+            <div class="job-meta">
+                <span>{{job["companyName"]}}</span>
+                <span class="job-duration">
+                    {{job["displayStartDate"]}} - {{job["displayEndDate"]}} · {{job["duration"]}} yr
+                </span>
+            </div>
+
+            <div class="divider-container">
+                <div class="divider-line"></div>
+                <button (click)="toggle(i)" class="divider-button">
+                    {{ expanded[i] ? 'Read Less': 'Read More'}}
+                </button>
+            </div>
+
+            <div class="description" [class.collapsed]="!expanded[i]" [class.expanded]="expanded[i]">
+                <div [innerHtml]="job['description']"></div>
+                <div style="display:flex; align-items: center; justify-content: center;">
+                    <button (click)="toggle(i)" class="end-text-readless-button">
+                        <span class="accent-underline">{{ expanded[i] ? 'Read Less': 'Read More'}}</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
