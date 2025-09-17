@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { AnimatedPngHolderComponent } from '../animated-png-holder/animated-png-holder.component';
-import { Job } from './job';
+
+import { DtoJob } from '../../shared/dtos/dtoJob';
+import { JobsService } from '../../services/jobs.service';
+
 
 @Component({
   selector: 'app-experience',
@@ -12,7 +15,7 @@ import { Job } from './job';
   styleUrl: './experience.component.css'
 })
 export class ExperienceComponent implements OnInit {
-  public jobs: Job[] = [];
+  public jobs: DtoJob[] = [];
   public expanded: boolean[] = [];
   public totalYearsExp: number = 0;
   private dateTimeFormatOpts: Intl.DateTimeFormatOptions = {
@@ -20,11 +23,19 @@ export class ExperienceComponent implements OnInit {
   };
   get roundedYearsExp(): number { return Math.round(this.totalYearsExp); }
   get msInYear(): number { return (1000 * 60 * 60 * 24 * 365.25); }
-  private jobsJson: Job[];
   public businessMachi: any[] = []
   public businessPeach: any[] = []
 
+  jobsList: DtoJob[] = []
+  jobsService: JobsService = inject(JobsService)
+
   constructor(private http: HttpClient) {
+
+    this.jobsService.getAllJobs().then((jobsList: DtoJob[]) => {
+      this.jobsList = jobsList;
+    })
+
+
     // mock up getting data from a service, its what id prob use if i had a db/api
     this.businessMachi = [
       { src: 'assets/sprites/Business-Machi/Business-Machi-0.png', class: 'pixelated' },
@@ -39,51 +50,8 @@ export class ExperienceComponent implements OnInit {
       { src: 'assets/sprites/Business-Peach/Business-Peach-2.png', class: 'pixelated' },
       { src: 'assets/sprites/Business-Peach/Business-Peach-3.png', class: 'pixelated' },
     ]
-    this.jobsJson = []
-    /*
-    {
-      order: 1,
-        companyName: "S&C Electric Company",
-          jobTitle: "Operations Technology Engineer",
-            description: "",
-              startDate: new Date("2024-07-01T00:00:00"),
-                endDate: new Date(),
-                  duration: 0,
-                    current: true
-    },
-    {
-      order: 2,
-        companyName: "Plexus Corporation",
-          jobTitle: "Manufacturing System Engineer",
-            description: "",
-              startDate: new Date("2020-06-01T00:00:00"),
-                endDate: new Date("2024-07-01T00:00:00"),
-                  duration: 0,
-                    current: false
-    },
-    {
-      order: 3,
-        companyName: "Husco International Inc.",
-          jobTitle: "Advanced Manufacturing Engineer",
-            description: "",
-              startDate: new Date("2019-04-01T00:00:00"),
-                endDate: new Date("2020-06-01T00:00:00"),
-                  duration: 0,
-                    current: false
-    },
-    {
-      order: 4,
-        companyName: "Greenheck Fan Company",
-          jobTitle: "Product Development Coop",
-            description: "",
-              startDate: new Date("2016-01-01T00:00:00"),
-                endDate: new Date("2016-09-01T00:00:00"),
-                  duration: 0,
-                    current: false
-    }
-                    */
-
   }
+
   getSizeCat(): number {
     const width = window.innerWidth;
     if (width < 480) return 64;
@@ -92,7 +60,7 @@ export class ExperienceComponent implements OnInit {
   }
 
   async ngOnInit() {
-    for (const job of this.jobsJson) {
+    for (const job of []) {
       const enrichedJob = await this.enrichJob(job);
       this.jobs.push(enrichedJob);
       this.totalYearsExp += enrichedJob.duration;
@@ -100,7 +68,7 @@ export class ExperienceComponent implements OnInit {
     this.expanded = this.jobs.map(() => false); // show more toggle map
   }
 
-  private async enrichJob(data: Job) {
+  private async enrichJob(data: DtoJob) {
     if (data.endDate == null) {
       data.endDate = new Date();
       data.current = true;
