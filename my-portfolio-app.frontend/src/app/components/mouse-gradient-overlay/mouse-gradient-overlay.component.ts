@@ -7,9 +7,9 @@ import { Component, HostListener } from '@angular/core';
   styleUrl: './mouse-gradient-overlay.component.css'
 })
 export class MouseGradientOverlayComponent {
-  public x: number = 500;
-  public y: number = 500;
-  public r: number = 450;
+  public x: number = 250;
+  public y: number = 250;
+  public r: number = 250;
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {

@@ -1,0 +1,25 @@
+<div class="flip-card-wrapper">
+    <div class="flip-container">
+        <div class="flip flip-left">
+            <div class="front front-left">
+                <img [src]="projectThumbnail" [alt]="projectThumbnailAlt">
+            </div>
+            <div class="back back-left">
+            </div>
+        </div>
+    </div>
+    <div class="flip-container">
+        <div class="flip flip-right">
+            <div class="front front-right">
+                <img [src]="projectThumbnail" [alt]="projectThumbnailAlt">
+            </div>
+            <div class="back back-right">
+            </div>
+        </div>
+    </div>
+    <div class="flip-description">
+        <span class="project-title">{{projectTitle}}</span>
+        <p class="project-description">{{projectDescription}}</p>
+        <a [href]="projectLink">View Project</a>
+    </div>
+</div>

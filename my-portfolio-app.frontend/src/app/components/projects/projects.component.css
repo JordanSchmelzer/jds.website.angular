@@ -86,3 +86,30 @@ p {
     font-weight: 500;
     line-height: 36px;
 }
+
+.project-card::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    z-index: 1;
+    background: #03DAC5;
+    background: linear-gradient(180deg, rgba(3, 218, 197, 1) 0%, #BB86FC 50%);
+    overflow: hidden;
+    transform: rotate(-10deg);
+    transform: translateY(20px);
+}
+
+.project-card img {
+    position: absolute;
+    z-index: 0;
+    height: 300px;
+    width: 450px;
+    overflow: hidden;
+    border-radius: inherit;
+}
+
+.project-card span {
+    position: absolute;
+    z-index: 2;
+}

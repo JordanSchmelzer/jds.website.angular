@@ -1,7 +1,7 @@
 .gradient-overlay {
     position: fixed;
-    width: 900px;
-    height: 900px;
+    width: 500px;
+    height: 500px;
     pointer-events: none;
     z-index: -9999;
     border-radius: 50%;

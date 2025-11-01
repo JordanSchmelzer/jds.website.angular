@@ -1,0 +1,121 @@
+.flip-card-wrapper {
+    position: relative;
+    background: var(--bg-body2);
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.flip-card-wrapper:hover {
+    animation: pulseGlow 4s ease-in-out infinite;
+    transform: scale(1.02);
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 15px rgba(187, 134, 252, 0.6),
+            0 0 35px rgba(187, 134, 252, 0.4),
+            0 0 55px rgba(187, 134, 252, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 25px rgba(187, 134, 252, 0.8),
+            0 0 45px rgba(187, 134, 252, 0.6),
+            0 0 65px rgba(187, 134, 252, 0.4);
+    }
+
+    100% {
+        box-shadow: 0 0 15px rgba(187, 134, 252, 0.6),
+            0 0 35px rgba(187, 134, 252, 0.4),
+            0 0 55px rgba(187, 134, 252, 0.2);
+    }
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+    display: inline-block;
+    perspective: 1000px;
+    vertical-align: top;
+}
+
+/* flip the pane when hovered */
+.flip-card-wrapper:hover .flip-left {
+    transform: rotateY(-180deg);
+}
+
+.flip-card-wrapper:hover .flip-right {
+    transform: rotateY(180deg);
+}
+
+.flip-container,
+.front,
+.back {
+    width: 225px;
+    height: 300px;
+}
+
+/* flip speed goes here */
+.flip {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* hide back of pane during swap */
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+    overflow: hidden;
+}
+
+/* back, initially hidden pane */
+.back {
+    background: var(--bg-body3);
+    transform: rotateY(180deg);
+    overflow: hidden;
+}
+
+img {
+    height: 300px;
+    width: 450px;
+}
+
+.front-left img {
+    position: absolute;
+    left: 0;
+}
+
+.front-right img {
+    position: absolute;
+    right: 0;
+}
+
+.flip-description {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.flip-card-wrapper:hover .flip-description {
+    opacity: 1;
+}
+
+.flip-description .project-title {}
+
+.flip-description .project-description {}
+
+.flip-description a {}
+
+.flip-description p {}
