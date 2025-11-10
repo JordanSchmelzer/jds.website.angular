@@ -10,49 +10,33 @@
             <div class="container">
                 <app-project-flip-card projectTitle="Angular Portfolio"
                     projectThumbnail="/assets/projects/first-website.png"
-                    projectThumbnailAlt="Thumbnail of Jordan's Portfolio" projectDescription="asdf"
-                    projectLink="https://github.com/JordanSchmelzer/jds.website.angular"></app-project-flip-card>
+                    projectThumbnailAlt="Thumbnail of Jordan's Portfolio" [projectDescription]="project1Description"
+                    projectLink="https://github.com/JordanSchmelzer/jds.website.angular">
+                </app-project-flip-card>
 
-                <app-project-flip-card projectTitle="asdf" projectThumbnail="asdf" projectThumbnailAlt="asdf"
-                    projectDescription="asdf" projectLink="asd"></app-project-flip-card>
+                <app-project-flip-card projectTitle="Pygame Pac-Man" projectThumbnail="/assets/projects/pacman.png"
+                    projectThumbnailAlt="Thumbnail of Jordan's Pac-Man game" [projectDescription]="project2Description"
+                    projectLink="https://github.com/JordanSchmelzer/game">
+                </app-project-flip-card>
 
-                <app-project-flip-card projectTitle="asdf" projectThumbnail="asdf" projectThumbnailAlt="asdf"
-                    projectDescription="asdf" projectLink="asd"></app-project-flip-card>
+                <app-project-flip-card projectTitle="Discord Music Bot" projectThumbnail="asdf"
+                    projectThumbnailAlt="Thumbnail logo for Jordan's Discord Music Bot"
+                    [projectDescription]="project3Description" projectLink="">
+                </app-project-flip-card>
 
-                <app-project-flip-card projectTitle="asdf" projectThumbnail="asdf" projectThumbnailAlt="asdf"
-                    projectDescription="asdf" projectLink="asd"></app-project-flip-card>
+                <app-project-flip-card projectTitle="AI Web Chess" projectThumbnail="asdf"
+                    projectThumbnailAlt="Thumbnail of Jordan's AI Chess Game" [projectDescription]="project4Description"
+                    projectLink="">
+                </app-project-flip-card>
 
-                <app-project-flip-card projectTitle="asdf" projectThumbnail="asdf" projectThumbnailAlt="asdf"
-                    projectDescription="asdf" projectLink="asd"></app-project-flip-card>
+                <app-project-flip-card projectTitle="C# Console Chess" projectThumbnail="asdf"
+                    projectThumbnailAlt="Thumbnail of Jordan's Console Chess Game"
+                    [projectDescription]="project5Description" projectLink="">
+                </app-project-flip-card>
 
-                <app-project-flip-card projectTitle="asdf" projectThumbnail="asdf" projectThumbnailAlt="asdf"
-                    projectDescription="asdf" projectLink="asd"></app-project-flip-card>
-
-
-                <div class="project-card">
-                    <img [src]="" alt="">
-                    <span>Pygame Pac-Man</span>
-                </div>
-
-                <div class="project-card">
-                    <img [src]="" alt="">
-                    <span>Discord Music Bot</span>
-                </div>
-
-                <div class="project-card">
-                    <img [src]="" alt="">
-                    <span>AI Chess</span>
-                </div>
-
-                <div class="project-card">
-                    <img [src]="" alt="">
-                    <span>C# Console Chess</span>
-                </div>
-
-                <div class="project-card see-more">
-                    <img [src]="" alt="">
-                    See all of my projects
-                </div>
+                <app-project-flip-card projectTitle="All Projects" projectThumbnail="asdf"
+                    projectThumbnailAlt="project5Description" projectDescription="asdf" projectLink="">
+                </app-project-flip-card>
             </div>
         </div>
     </div>
